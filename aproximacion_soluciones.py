@@ -1,0 +1,17 @@
+# Aproximación de soluciones
+# Es similar a enumeración exhaustiva, pero no necesita respuesta exacta
+# Se acepta un margen de error al cual se le llama EPSILON
+# EPSILON puede aceptar mayor o menor margen de error, pero esta balanza conlleva en más o menos recursos requeridos
+
+objetivo = int(input('Escoge un numero: '))
+epsilon = 0.01
+paso = epsilon**2
+respuesta = 0.0
+
+while abs(respuesta**2 - objetivo) >= epsilon and respuesta <= objetivo:
+    respuesta += paso
+
+if abs(respuesta**2 - objetivo) >= epsilon:
+    print(f'No se encontro la raiz cuadrada de {objetivo}')
+else:
+    print(f'La raiz cuadrada de {objetivo} es {respuesta}')
